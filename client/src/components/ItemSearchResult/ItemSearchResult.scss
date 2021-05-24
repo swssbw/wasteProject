@@ -1,0 +1,14 @@
+.ItemSearchResult {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  div {
+    display: block;
+  }
+
+  li {
+    list-style: none;
+  }
+}

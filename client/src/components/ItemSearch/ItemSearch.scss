@@ -1,0 +1,22 @@
+.desc {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem;
+  font-weight: lighter;
+  color: red;
+  margin-bottom: 8px;
+}
+
+.ItemSearch {
+  display: flex;
+  justify-content: center;
+
+  input {
+    outline: none;
+    width: 60%;
+    height: 1.5rem;
+    padding: 0.2rem;
+  }
+}

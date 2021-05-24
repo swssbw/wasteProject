@@ -1,5 +1,8 @@
 import axios from 'axios';
 import React, {useState} from 'react'
+import ItemSearchResult from '../ItemSearchResult/ItemSearchResult';
+import './ItemSearch.scss'
+
 
 const ItemSearch = () => {
   const [Value, setValue] = useState('');
@@ -16,8 +19,6 @@ const ItemSearch = () => {
     setResult(result.data);
   }
 
-  const resultList =  Result.map(item => <li key={item._id}>{item.item} 은/는 {item.how}</li> ) 
-  
   const onSubmit = (e) => {
     e.preventDefault();
     axiosValue();
@@ -26,7 +27,8 @@ const ItemSearch = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <div className="desc">단, 지자체별로 배출방법에 대한 차이가 있을 수 있으니 참고로만 사용해주세요.</div>
+      <form onSubmit={onSubmit} className="ItemSearch">
         <input 
           placeholder="검색어를 입력하세요"
           value={Value.item}
@@ -34,7 +36,7 @@ const ItemSearch = () => {
         />
         <button type="submit">검색</button>
       </form>
-      <ul>{resultList}</ul>
+      <ItemSearchResult Result={Result}></ItemSearchResult>
     </div>
   )
 }

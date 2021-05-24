@@ -1,19 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import MainPage from './components/MainPage';
-import ItemSearch from './components/ItemSearch';
-import ItemInsert from './components/ItemInsert';
+import MainPage from './components/MainPage/MainPage';
+import ItemSearch from './components/ItemSearch/ItemSearch';
+import ItemInsert from './components/ItemInsert/ItemInsert';
+import Template from './components/Template/Template';
 
 function App() {
 
-  
-
   return(
-  <>
-    <ItemSearch></ItemSearch>
-    <ItemInsert></ItemInsert>
-    <MainPage />
-  </>
+    <Template>
+      <MainPage />
+      <ItemSearch></ItemSearch>
+      <ItemInsert></ItemInsert>
+    </Template>
   )
 
 }
