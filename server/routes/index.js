@@ -9,11 +9,18 @@ router.get('/all', async(req,res) => {
 });
 
 // 분리수거 항목 검색
-router.get('/:sword', async(req,res) => {
-  const result = await Sorting.find({"item":req.params.sword});
-  res.json(result[0].category);
-});
+// router.get('/:sword', async(req,res) => {
+//   const result = await Sorting.find({"item":req.params.sword});
+//   res.json(result[0].category);
+// });
 
+// 분리수거 항목 검색2
+router.post('/search', async(req,res) => {
+  //const result = await Sorting.find({"item":req.body.sword});
+  const result = await Sorting.find( { "item" : new RegExp(req.body.sword)});
+ 
+  res.json(result);
+});
 
 // 사용자가 직접 항목 추가
 

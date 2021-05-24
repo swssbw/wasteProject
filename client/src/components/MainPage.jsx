@@ -9,16 +9,16 @@ const MainPage = () => {
 
   const handleAll = async() => {
     const result = await axios.get('http://localhost:5000/api/all');
-    console.log(result.data);
     setContents(result.data);
   }
-  
-  
+ 
+  const contentsList = Contents.map(item => <li key={item._id}>{item.item} 은/는 {item.how}</li>)
+
   return (
     <div>
       <h1>전체 쓰레기 목록</h1>
       <button onClick={handleAll}>불러오기</button>
-      <SubPage data={Contents}></SubPage>
+      <ul>{contentsList}</ul>
     </div>
   )
 }
