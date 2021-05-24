@@ -1,22 +1,32 @@
 import React,{ useEffect, useState} from 'react';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom';
 import './MainPage.scss'
+import SubPage from '../subPage/SubPage';
 
 const MainPage = () => {
   const [Contents, setContents] = useState([]);
+  const [ModalOn, setModalOn] = useState(false);
 
-  const handleAll = async() => {
-    const result = await axios.get('http://localhost:5000/api/all');
-    setContents(result.data);
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/all')
+    .then(response => {
+      setContents(response.data);
+    })
+  }, [])
+
+  const handleModalOn = (e) => {
+    setModalOn(true);
   }
- 
-  const contentsList = Contents.map(item => <li key={item._id}>{item.item} 은/는 {item.how}</li>)
+
+  const handleModalOff = (e) => {
+    setModalOn(false);
+  }
+
 
   return (
     <div className="Load-all">
-      <button onClick={handleAll}>ALL</button>
-      <ul>{contentsList}</ul>
+      <button onClick={handleModalOn}>ALL</button>
+        <SubPage ModalOn={ModalOn} Contents={Contents} handleModalOff={handleModalOff}></SubPage>
     </div>
   )
 }

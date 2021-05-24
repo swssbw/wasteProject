@@ -7,7 +7,8 @@ import './ItemSearch.scss'
 const ItemSearch = () => {
   const [Value, setValue] = useState('');
   const [Result, setResult] = useState([]);
-
+  console.log(Result);
+  
   const onChange = (e) => {
     setValue(e.target.value);
   }
@@ -22,7 +23,6 @@ const ItemSearch = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     axiosValue();
-    setValue("");
   }
 
   return (
@@ -36,8 +36,9 @@ const ItemSearch = () => {
         />
         <button type="submit">검색</button>
       </form>
-      <ItemSearchResult Result={Result}></ItemSearchResult>
+        <ItemSearchResult Result={Result}></ItemSearchResult> 
     </div>
+    
   )
 }
 
