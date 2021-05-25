@@ -8,17 +8,11 @@ router.get('/all', async(req,res) => {
     res.json(result);
 });
 
-// 분리수거 항목 검색1
-// router.get('/:sword', async(req,res) => {
-//   const result = await Sorting.find({"item":req.params.sword});
-//   res.json(result[0].category);
-// });
 
-// 분리수거 항목 검색2
+// 분리수거 항목 검색
 router.post('/search', async(req,res) => {
-  const result = await Sorting.find({"item":req.body.sword});
-  // const result = await Sorting.find( { "item" : new RegExp(req.body.sword)});
-  
+  // const result = await Sorting.find({"item":req.body.sword});
+  const result = await Sorting.find( { "item" : new RegExp(req.body.sword)});
   res.json(result);
 });
 
@@ -29,7 +23,7 @@ router.post('/add', async(req,res) => {
     item,
     how 
   });
-  
+
   await sorting.save();
   res.json({success: true});
 })

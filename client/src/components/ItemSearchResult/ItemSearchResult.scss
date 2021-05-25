@@ -6,20 +6,52 @@
   .ItemSearchResultTitle {
     display: block;
     font-size: 1rem;
-    color: #bdbdbd;
+    // color: #bdbdbd;
   }
 
   ul {
     padding: 0;
+    margin: 0;
+    width: 100%;
   }
 
-  li {
+  .ItemList {
     list-style: none;
     text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid #dfdfdf;
+    width: 80%;
+    margin: 0 auto;
+
+    &:last-child {
+      border: none;
+    }
+
+    &:nth-child(even) {
+      background: #f8f9fa;
+    }
+
     .ItemName {
       font-size: 1.3rem;
       color: #212121;
       font-weight: bolder;
+      margin: 0.8rem;
+    }
+
+    .ItemCategory {
+      font-size: 1rem;
+      color: #212121;
+      margin: 0.3rem;
+    }
+
+    .ItemCaution {
+      font-size: 1.2rem;
+      color: red;
+      font-weight: bolder;
+    }
+
+    .ItemHow {
+      font-size: 0.9rem;
     }
   }
 }

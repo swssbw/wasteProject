@@ -15,6 +15,8 @@ const ItemSearch = () => {
     setValue(e.target.value);
   },[])
 
+
+  
   const axiosValue = async() => {
     const result = await axios.post('http://localhost:5000/api/search', {
       sword: Value

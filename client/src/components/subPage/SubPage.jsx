@@ -10,7 +10,7 @@ const SubPage = ({ Contents, ModalOn, handleModalOff }) => {
     <div className="dim" onClick={handleModalOff}>
       <div className="all_overlay" onClick={(e)=> e.stopPropagation()}>
         {
-          Contents.map(item => <li key={item._id}>{item.item}</li>)
+          Contents.map((item, _id) => <li key={_id}>{item.item}</li>)
         }
       </div>
     </div>

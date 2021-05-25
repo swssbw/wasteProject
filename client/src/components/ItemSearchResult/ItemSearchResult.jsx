@@ -6,7 +6,14 @@ const ItemSearchResult = ({ Result }) => {
       return (
         <div className="ItemSearchResult">
           <ul>
-            {Result.map(item =>  <li key={item._id}><p className="ItemName">{item.item}{item.category}</p>{item.how}</li>)}
+            {Result.map((item, _id) => 
+              <li key={_id} className="ItemList"> 
+                <p className="ItemName">{item.item} </p> 
+                <p className="ItemCategory">{item.category}</p> 
+                <span className="ItemCaution">{item.caution}</span> 
+                <span className="ItemHow">{item.how}</span>
+              </li>
+              )}
           </ul>
         </div>
       )
