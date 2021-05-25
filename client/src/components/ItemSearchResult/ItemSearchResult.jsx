@@ -5,8 +5,9 @@ const ItemSearchResult = ({ Result }) => {
     if(Result.length !== 0) {
       return (
         <div className="ItemSearchResult">
-          <div className="ItemSearchResultTitle">검색결과</div> 
-          <ul>{ Result.map(item =>  <li key={item._id}><p className="ItemName">{item.item}</p>{item.how}</li> ) }</ul>
+          <ul>
+            {Result.map(item =>  <li key={item._id}><p className="ItemName">{item.item}{item.category}</p>{item.how}</li>)}
+          </ul>
         </div>
       )
     } else {

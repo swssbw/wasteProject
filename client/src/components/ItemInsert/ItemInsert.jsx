@@ -50,7 +50,7 @@ const ItemInsert = () => {
 
   return (
     <div className="ItemInsert">
-      <div className="msg">앗.. 결과가 없네요. <br/> 직접 추가해주시겠어요? </div>
+      <div className="msg">앗.. 결과가 없네요.  직접 추가해주시겠어요? </div>
       <form onSubmit={onSubmit} className="Insertform">
         <input 
           placeholder="무엇을 버릴까요?"

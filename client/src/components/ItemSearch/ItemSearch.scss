@@ -3,10 +3,11 @@
   justify-content: center;
   margin: 0;
   padding: 0;
-  font-size: 0.85rem;
-  font-weight: lighter;
-  color: red;
+  font-size: 0.8rem;
+  color: #ff4700;
   margin-bottom: 8px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
 }
 
 .ItemSearch {
@@ -16,7 +17,35 @@
   input {
     outline: none;
     width: 60%;
-    height: 1.5rem;
-    padding: 0.2rem;
+    height: 2rem;
+    padding: 0.2rem 1rem;
+    border: 1px solid #bcbcbc;
+    border-radius: 6px;
+
+    &:focus {
+      box-shadow: 0px 0px 4px 1px rgba(0, 162, 255, 0.274);
+      outline: none;
+      border: 1px solid #bcbcbc;
+    }
+  }
+
+  button {
+    margin-left: 5px;
+    background: #424242;
+    color: #fff;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: 400ms ease all;
+    outline: none;
+    width: 3rem;
+    border-radius: 6px;
+
+    &:hover {
+      background: #e0e0e0;
+      color: #000000;
+      font-weight: bolder;
+      border: 1px solid #bcbcbc;
+    }
   }
 }

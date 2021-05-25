@@ -25,7 +25,7 @@ const MainPage = () => {
 
   return (
     <div className="Load-all">
-      <button onClick={handleModalOn}>ALL</button>
+      <button onClick={handleModalOn}>전체보기</button>
         <SubPage ModalOn={ModalOn} Contents={Contents} handleModalOff={handleModalOff} />
     </div>
   )

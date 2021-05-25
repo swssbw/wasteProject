@@ -3,7 +3,8 @@ import React, {useState, useCallback} from 'react'
 import ItemSearchResult from '../ItemSearchResult/ItemSearchResult';
 import './ItemSearch.scss';
 import ItemInsert from '../ItemInsert/ItemInsert';
-
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ItemSearch = () => {
   const [Value, setValue] = useState('');
@@ -36,7 +37,9 @@ const ItemSearch = () => {
           value={Value.item}
           onChange={onChange}
         />
-        <button type="submit">검색</button>
+        <button type="submit">
+        <FontAwesomeIcon icon={faSearch} className="search" />
+        </button>
       </form>
 
       {
@@ -45,8 +48,10 @@ const ItemSearch = () => {
         : <ItemInsert />
       }
 
+    
     </div>
   )
+
 }
 
 export default ItemSearch

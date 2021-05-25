@@ -1,12 +1,12 @@
 .ItemSearchResult {
-  margin-top: 1.5rem;
   display: flex;
   align-items: center;
   flex-direction: column;
 
   .ItemSearchResultTitle {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    color: #bdbdbd;
   }
 
   ul {
@@ -17,7 +17,9 @@
     list-style: none;
     text-align: center;
     .ItemName {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      color: #212121;
+      font-weight: bolder;
     }
   }
 }
