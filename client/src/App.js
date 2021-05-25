@@ -10,8 +10,7 @@ function App() {
   return(
     <Template>
       <MainPage />
-      <ItemSearch></ItemSearch>
-      <ItemInsert></ItemInsert>
+      <ItemSearch />
     </Template>
   )
 

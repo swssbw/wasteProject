@@ -16,9 +16,9 @@ router.get('/all', async(req,res) => {
 
 // 분리수거 항목 검색2
 router.post('/search', async(req,res) => {
-  //const result = await Sorting.find({"item":req.body.sword});
-  const result = await Sorting.find( { "item" : new RegExp(req.body.sword)});
- 
+  const result = await Sorting.find({"item":req.body.sword});
+  // const result = await Sorting.find( { "item" : new RegExp(req.body.sword)});
+  
   res.json(result);
 });
 

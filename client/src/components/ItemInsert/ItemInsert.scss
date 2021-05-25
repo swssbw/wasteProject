@@ -1,0 +1,27 @@
+.ItemInsert {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .msg {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .Insertform {
+    margin-top: 1rem;
+    text-align: center;
+
+    input {
+      width: 200px;
+      height: 1.4rem;
+      margin: 0.2rem 0;
+    }
+
+    button {
+      width: 200px;
+      height: 30px;
+      margin: 0.2rem 0;
+    }
+  }
+}
