@@ -1,31 +1,4 @@
-$darkblack: #1d1d1d;
-$border: 1px solid #bcbcbc;
-$btn-back: #424242;
-$white: #fff;
-$light-gray: #f0f0f0;
-$input-focus: 0px 0px 3px 4px rgba(0, 162, 255, 0.1);
-
-@mixin button {
-  margin-left: 5px;
-  border-radius: 6px;
-  background: $btn-back;
-  color: $white;
-  transition: 400ms ease all;
-}
-
-@mixin button-hover {
-  background: $light-gray;
-  color: $darkblack;
-  border: $border;
-  font-weight: 700;
-}
-
-@mixin Input {
-  height: 3.2rem;
-  padding: 0.32rem 1.6rem;
-  border: $border;
-  border-radius: 6px;
-}
+@import "../../scss/main.scss";
 
 .ItemInsert {
   display: flex;
