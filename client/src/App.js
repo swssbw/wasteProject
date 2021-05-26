@@ -1,6 +1,6 @@
-import MainPage from './components/MainPage/MainPage';
-import ItemSearch from './components/ItemSearch/ItemSearch';
-import Template from './components/Template/Template';
+import MainPage from './components/MainPage';
+import ItemSearch from './components/ItemSearch';
+import Template from './components/Template';
 
 function App() {
   return(

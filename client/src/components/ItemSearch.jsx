@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useState , useCallback } from 'react'
-import ItemSearchResult from '../ItemSearchResult/ItemSearchResult';
-import ItemInsert from '../ItemInsert/ItemInsert';
+import ItemSearchResult from './ItemSearchResult';
+import ItemInsert from './ItemInsert';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import './ItemSearch.scss';
+import '../scss/main.scss';
 
 const ItemSearch = () => {
   const [Value, setValue] = useState('');

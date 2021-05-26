@@ -1,5 +1,5 @@
 import React from 'react'
-import './ItemSearchResult.scss'
+import '../scss/main.scss';
 
 const ItemSearchResult = ({ Result }) => {
   

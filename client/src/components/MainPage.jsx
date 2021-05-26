@@ -1,7 +1,7 @@
 import React,{ useState } from 'react';
 import Rodal from 'rodal';
-import './MainPage.scss'
 import 'rodal/lib/rodal.css';
+import '../scss/main.scss';
 
 const MainPage = () => {
 
@@ -17,7 +17,7 @@ const MainPage = () => {
 
   return (
       <div className="main">
-        <button onClick={show}> ** 쓰레기 버리기 전 필독 ** </button>
+        <button onClick={show}> 분리배출 전 꼭 읽어주세요! </button>
         <Rodal visible={Visible} onClose={hide} width={400} height={400}>
           <div className="modalWrapper">
           <div className="modalTitle">분리배출 핵심 4원칙을 아시나요?</div>

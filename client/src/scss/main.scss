@@ -1,3 +1,9 @@
-@import "./variables";
-@import "./mixins";
-@import "./general";
+@import "./config/variables";
+@import "./config/mixins";
+@import "./config/general";
+
+@import "./modules/ItemInsert";
+@import "./modules/ItemSearch";
+@import "./modules/ItemSearchResult";
+@import "./modules/MainPage";
+@import "./modules/Template";

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import './ItemInsert.scss';
 import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
+import '../scss/main.scss';
 
 const ItemInsert = () => {
   const [Input, setInput] = useState({
