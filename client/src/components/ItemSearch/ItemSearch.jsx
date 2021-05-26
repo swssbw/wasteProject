@@ -1,22 +1,19 @@
 import axios from 'axios';
-import React, {useState, useCallback} from 'react'
+import React, { useState , useCallback } from 'react'
 import ItemSearchResult from '../ItemSearchResult/ItemSearchResult';
-import './ItemSearch.scss';
 import ItemInsert from '../ItemInsert/ItemInsert';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './ItemSearch.scss';
 
 const ItemSearch = () => {
   const [Value, setValue] = useState('');
   const [Result, setResult] = useState(['']);
   
-
   const onChange = useCallback (e => {
     setValue(e.target.value);
   },[])
 
-
-  
   const axiosValue = async() => {
     const result = await axios.post('http://localhost:5000/api/search', {
       sword: Value
@@ -28,7 +25,6 @@ const ItemSearch = () => {
     e.preventDefault();
     axiosValue();
   }
-
 
   return (
     <div>

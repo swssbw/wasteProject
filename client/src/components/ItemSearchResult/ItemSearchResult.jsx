@@ -1,5 +1,6 @@
 import React from 'react'
 import './ItemSearchResult.scss'
+
 const ItemSearchResult = ({ Result }) => {
   
     if(Result.length !== 0) {

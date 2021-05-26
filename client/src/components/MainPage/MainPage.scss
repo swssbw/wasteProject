@@ -1,20 +1,19 @@
-.Load-all {
+$emphasis-color: #ff4343;
+$white: #fff;
+$darkblack: #1d1d1d;
+
+.main {
   display: flex;
   justify-content: flex-end;
 
   button {
-    margin-left: 5px;
-    background: #fff;
-    color: rgb(255, 67, 67);
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: 0.3s ease all;
-    outline: none;
+    background: $white;
+    color: $emphasis-color;
     font-weight: 400;
+    margin-left: 5px;
+    transition: 0.3s ease all;
 
     &:hover {
-      color: rgb(255, 93, 93);
       font-weight: 700;
     }
   }
@@ -24,17 +23,14 @@
     font-size: 1.36rem;
 
     .modalTitle {
+      color: $darkblack;
       font-size: 1.92rem;
-      color: black;
     }
 
     .modalDescWrapper {
       .modalDesc {
         font-size: 1.6rem;
-        padding: 0;
         margin: 10px 0 2px 0;
-        font-weight: bolder;
-        color: black;
       }
     }
   }

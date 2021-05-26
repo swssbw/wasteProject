@@ -1,51 +1,59 @@
+$darkblack: #1d1d1d;
+$border: 1px solid #bcbcbc;
+$btn-back: #424242;
+$white: #fff;
+$light-gray: #f0f0f0;
+$input-focus: 0px 0px 3px 4px rgba(0, 162, 255, 0.1);
+@mixin button {
+  margin-left: 5px;
+  border-radius: 6px;
+  background: $btn-back;
+  color: $white;
+  transition: 400ms ease all;
+}
+
+@mixin button-hover {
+  background: $light-gray;
+  color: $darkblack;
+  border: $border;
+  font-weight: 700;
+}
+
+@mixin Input {
+  height: 3.2rem;
+  padding: 0.32rem 1.6rem;
+  border: $border;
+  border-radius: 6px;
+}
+
 .desc {
   display: flex;
   justify-content: center;
-  margin: 0;
-  padding: 0;
   font-size: 1.28rem;
-  color: #000000;
-  margin-bottom: 8px;
-  font-weight: 400;
+  color: $darkblack;
 }
 
 .ItemSearch {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 
   input {
-    outline: none;
     width: 60%;
-    height: 3.2rem;
-    padding: 0.32rem 1.6rem;
-    border: 1px solid #bcbcbc;
-    border-radius: 6px;
+    @include Input;
 
     &:focus {
-      box-shadow: 0px 0px 3px 2px rgba(0, 162, 255, 0.2);
-      outline: none;
-      border: 1px solid #bcbcbc;
+      box-shadow: $input-focus;
+      border: $border;
     }
   }
 
   button {
-    margin-left: 5px;
-    background: #424242;
-    color: #fff;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: 400ms ease all;
-    outline: none;
+    @include button;
     width: 4.8rem;
-    border-radius: 6px;
 
     &:hover {
-      background: #e0e0e0;
-      color: #000000;
-      font-weight: bolder;
-      border: 1px solid #bcbcbc;
+      @include button-hover;
     }
   }
 }

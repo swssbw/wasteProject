@@ -1,3 +1,7 @@
+$darkblack: #1d1d1d;
+$gray: #757575;
+$emphasis-color: #ff4343;
+
 .ItemSearchResult {
   display: flex;
   align-items: center;
@@ -5,20 +9,7 @@
   max-height: 250px;
   overflow: auto;
 
-  .ItemSearchResultTitle {
-    display: block;
-    font-size: 1.6rem;
-    // color: #bdbdbd;
-  }
-
-  ul {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-
   .ItemList {
-    list-style: none;
     text-align: center;
     padding: 1.6rem;
     border-bottom: 1px solid #dfdfdf;
@@ -35,21 +26,20 @@
 
     .ItemName {
       font-size: 2.08rem;
-      color: #212121;
+      color: $darkblack;
       font-weight: 700;
-      margin: 0;
     }
 
     .ItemCategory {
       font-size: 1.44rem;
-      color: #757575;
+      color: $gray;
       margin: 0.3rem;
     }
 
     .ItemCaution {
       font-size: 1.6rem;
-      color: red;
-      font-weight: bolder;
+      color: $emphasis-color;
+      font-weight: 700;
     }
 
     .ItemHow {

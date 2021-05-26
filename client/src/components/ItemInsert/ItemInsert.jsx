@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 import './ItemInsert.scss';
-import InsertModal from '../InsertModal/InsertModal';
+import Rodal from 'rodal';
+import 'rodal/lib/rodal.css';
 
 const ItemInsert = () => {
   const [Input, setInput] = useState({
@@ -10,17 +11,16 @@ const ItemInsert = () => {
     category: '',
   });
 
-  
   const { item, how, category  } = Input;
   
-  const [InsertModalOn, setInsertModalOn] = useState(false);
+  const [Visible, setVisible] = useState(false);
 
-  const handleModalOn = (e) => {
-    setInsertModalOn(true);
+  const show = () => {
+    setVisible(true);
   }
 
-  const handleModalOff = (e) => {
-    setInsertModalOn(false);
+  const hide = () => {
+    setVisible(false);
   }
 
   const onChange = (e) => {
@@ -39,7 +39,7 @@ const ItemInsert = () => {
       category: '',
     });
     axiosInput();
-    handleModalOn();
+    show();
   }
 
   const axiosInput = async() => {
@@ -95,14 +95,19 @@ const ItemInsert = () => {
           required
           className="categorySelect"
         >
-          {/* <option value="">카테고리를 선택해주세요!</option>  
-          <option value="대형">대형</option>   */}
           {options}
         </select><br/>
         <button type="submit">추가</button>
       </form>
-      <InsertModal InsertModalOn={InsertModalOn} handleModalOff={handleModalOff}></InsertModal>
-
+      <div>
+        <Rodal visible={Visible} onClose={hide} width={300} height={300}>
+          <div className="modalWrapper">
+            <p>감사합니다!</p>
+            <div className="InsertModalDesc">입력해주신 내용은 <br/> 검토 후 반영하도록 하겠습니다.</div>
+          </div>
+        </Rodal>
+      </div>
+      
     </div>
     )
 }
