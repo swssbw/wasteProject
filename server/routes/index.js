@@ -18,10 +18,11 @@ router.post('/search', async(req,res) => {
 
 // 사용자가 직접 항목 추가
 router.post('/add', async(req,res) => {
-  const {item, how} = req.body.Input
+  const {item, how, category} = req.body.Input
   const sorting = new Sorting({
     item,
-    how 
+    how,
+    category
   });
 
   await sorting.save();

@@ -7,10 +7,12 @@ const ItemInsert = () => {
   const [Input, setInput] = useState({
     item: '',
     how: '',
+    category: '',
   });
 
-  const { item, how  } = Input;
-
+  
+  const { item, how, category  } = Input;
+  
   const [InsertModalOn, setInsertModalOn] = useState(false);
 
   const handleModalOn = (e) => {
@@ -34,6 +36,7 @@ const ItemInsert = () => {
     setInput({
       item: '',
       how: '',
+      category: '',
     });
     axiosInput();
     handleModalOn();
@@ -41,8 +44,15 @@ const ItemInsert = () => {
 
   const axiosInput = async() => {
     await axios.post("http://localhost:5000/api/add",{Input})
-    
   }
+
+  const options = (
+    <>
+    <option value="">카테고리를 선택해주세요!</option>  
+    <option value="대형">대형</option>  
+    <option value="종량제">종량제</option>
+    </>
+  )
 
   return (
     <div className="ItemInsert">
@@ -64,9 +74,21 @@ const ItemInsert = () => {
           required
           autoComplete="off"
         /><br/>
+        <select 
+          name="category"
+          value={category}
+          onChange={onChange}
+          required
+          className="categorySelect"
+        >
+          {/* <option value="">카테고리를 선택해주세요!</option>  
+          <option value="대형">대형</option>   */}
+          {options}
+        </select><br/>
         <button type="submit">추가</button>
       </form>
       <InsertModal InsertModalOn={InsertModalOn} handleModalOff={handleModalOff}></InsertModal>
+
     </div>
     )
 }
