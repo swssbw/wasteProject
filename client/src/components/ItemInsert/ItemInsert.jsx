@@ -49,8 +49,22 @@ const ItemInsert = () => {
   const options = (
     <>
     <option value="">카테고리를 선택해주세요!</option>  
-    <option value="대형">대형</option>  
+    <option value="가전제품">가전제품</option>  
+    <option value="고철">고철</option>
+    <option value="금속캔">금속캔</option>
+    <option value="대형">대형</option>
+    <option value="전문시설">전문시설</option>
+    <option value="불연성 폐기물">불연성 폐기물</option>
+    <option value="비닐">비닐</option>
+    <option value="유리병">유리병</option>
+    <option value="음식물">음식물</option>
+    <option value="의류">의류</option>
+    <option value="재질에 맞게 배출">재질에 맞게 배출</option>
+    <option value="전용함">전용함</option>
     <option value="종량제">종량제</option>
+    <option value="종이">종이</option>
+    <option value="종이팩">종이팩</option>
+    <option value="플라스틱">플라스틱</option>
     </>
   )
 

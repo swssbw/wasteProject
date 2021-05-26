@@ -36,24 +36,28 @@ const MainPage = () => {
 
   return (
     <>
-      <div className="Load-all">
+      {/* <div className="Load-all">
         <button onClick={handleModalOn}>전체보기</button>
           <SubPage ModalOn={ModalOn} Contents={Contents} handleModalOff={handleModalOff} />
-      </div>
+      </div> */}
 
 
       <div className="Load-all">
-        <button onClick={show}>분류 안내</button>
+        <button onClick={show}> ** 쓰레기 버리기 전 필독 ** </button>
 
-        <Rodal visible={Visible} onClose={hide} width={500} height={500}>
-          <div>품목별 분류 안내</div>
-          <div>
-            ◾ 종이류 : 물기에 젖지 않게 묶거나 박스류에 담아서 배출 <br/>
-            ◾ 종이팩류 : 내용물을 비우고 물로 헹군 후 압착하여 배출 <br/>
-            ◾ 캔·고철류 : 내용물을 비우고 배출, 플라스틱 뚜껑은 분리 <br/>
-            ◾ 유리병류 : 병뚜껑을 제거하고 내용물을 비운 후 제출 <br/>
-            ◾ 플라스틱류 : 다른 재질로 된 뚜껑은 제거 후 내용물을 비우고 배출 <br/>
-            
+        <Rodal visible={Visible} onClose={hide} width={400} height={400}>
+          <div className="modalWrapper">
+          <div className="modalTitle">분리배출 핵심 4원칙을 아시나요?</div>
+          <div className="modalDescWrapper">
+            <p className="modalDesc">✅ 비운다 </p>
+            용기 안에 담겨있는 내용물은 깨끗이 비우고 배출한다. <br/>
+            <p className="modalDesc">✅ 헹군다 </p>
+            재활용품에 묻어있는 이물질, 음식물 등은 닦거나 한 번 헹궈서 배출한다. <br/>
+            <p className="modalDesc">✅ 분리한다 </p>
+            라벨 등의 다른 재질 부분은 제거하여 배출한다. <br/>
+            <p className="modalDesc">✅ 섞지 않는다 </p>
+            종류별, 재질별로 구분하여 분리수거함으로 배출한다.<br/>
+          </div>
           </div>
         </Rodal>
 

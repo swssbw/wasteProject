@@ -5,17 +5,35 @@
   button {
     margin-left: 5px;
     background: #fff;
-    color: rgb(155, 155, 155);
+    color: rgb(255, 67, 67);
     border: none;
     padding: 0;
     cursor: pointer;
-    transition: 0.2s ease all;
+    transition: 0.3s ease all;
     outline: none;
-    width: 4rem;
+    font-weight: 400;
 
     &:hover {
-      color: #000000;
-      font-weight: bolder;
+      color: rgb(255, 93, 93);
+      font-weight: 700;
+    }
+  }
+
+  .modalWrapper {
+    padding: 3rem;
+    font-size: 0.85rem;
+
+    .modalTitle {
+      font-size: 1.2rem;
+    }
+
+    .modalDescWrapper {
+      .modalDesc {
+        font-size: 1rem;
+        padding: 0;
+        margin: 10px 0 2px 0;
+        font-weight: bolder;
+      }
     }
   }
 }
