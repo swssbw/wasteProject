@@ -7,7 +7,7 @@
 
   .ItemSearchResultTitle {
     display: block;
-    font-size: 1rem;
+    font-size: 1.6rem;
     // color: #bdbdbd;
   }
 
@@ -20,7 +20,7 @@
   .ItemList {
     list-style: none;
     text-align: center;
-    padding: 1rem;
+    padding: 1.6rem;
     border-bottom: 1px solid #dfdfdf;
     width: 80%;
     margin: 0 auto;
@@ -34,26 +34,26 @@
     }
 
     .ItemName {
-      font-size: 1.3rem;
+      font-size: 2.08rem;
       color: #212121;
       font-weight: 700;
       margin: 0;
     }
 
     .ItemCategory {
-      font-size: 0.9rem;
+      font-size: 1.44rem;
       color: #757575;
       margin: 0.3rem;
     }
 
     .ItemCaution {
-      font-size: 1rem;
+      font-size: 1.6rem;
       color: red;
       font-weight: bolder;
     }
 
     .ItemHow {
-      font-size: 0.9rem;
+      font-size: 1.44rem;
     }
   }
 }
