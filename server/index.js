@@ -9,7 +9,7 @@ const cors = require('cors');
 const path = require('path');
 
 dotenv.config();
-app.set('port',process.env.PORT || 5000);
+app.set('port', process.env.PORT || 5000);
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
 app.use(express.json());
