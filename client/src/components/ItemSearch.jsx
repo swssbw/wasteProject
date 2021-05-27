@@ -34,6 +34,7 @@ const ItemSearch = () => {
           placeholder="검색어를 입력하세요"
           value={Value.item}
           onChange={onChange}
+          required
         />
         <button type="submit">
         <FontAwesomeIcon icon={faSearch} className="search" />
@@ -45,8 +46,6 @@ const ItemSearch = () => {
         ? <ItemSearchResult Result={Result} />
         : <ItemInsert />
       }
-
-    
     </div>
   )
 

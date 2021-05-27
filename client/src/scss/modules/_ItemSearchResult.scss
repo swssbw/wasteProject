@@ -5,12 +5,25 @@
   max-height: 250px;
   overflow: auto;
 
+  @include mobile {
+    max-height: 380px;
+    margin-top: 3rem;
+  }
+
   .ItemList {
     text-align: center;
     padding: 1.6rem;
     border-bottom: 1px solid #dfdfdf;
     width: 80%;
     margin: 0 auto;
+
+    @include tablet {
+      padding: 1rem;
+    }
+
+    @include mobile {
+      width: 90%;
+    }
 
     &:last-child {
       border: none;
@@ -24,18 +37,29 @@
       font-size: 2.08rem;
       color: $darkblack;
       font-weight: 700;
+
+      @include tablet {
+        font-size: 1.8rem;
+      }
     }
 
     .ItemCategory {
       font-size: 1.44rem;
       color: $gray;
       margin: 0.3rem;
+
+      @include tablet {
+        font-size: 1.34rem;
+      }
     }
 
     .ItemCaution {
       font-size: 1.6rem;
       color: $emphasis-color;
       font-weight: 700;
+      @include tablet {
+        font-size: 1.4rem;
+      }
     }
 
     .ItemHow {
