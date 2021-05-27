@@ -42,7 +42,7 @@ const ItemInsert = () => {
   }
 
   const axiosInput = async() => {
-    await axios.post("http://localhost:5000/api/add",{Input})
+    await axios.post("/api/add",{Input})
   }
 
   const options = (
