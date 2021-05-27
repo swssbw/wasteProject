@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 const connect = require('./config/db');
 const indexRouter = require('./routes');
 const cors = require('cors');
+const path = require('path');
 
 dotenv.config();
 app.set('port',process.env.PORT || 5000);
