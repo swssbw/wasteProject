@@ -4,7 +4,8 @@ MERN stack의 basic concept 을 이해하고 MVC 패턴을 적용하기 위해 �
 분리수거 검색기로, 사용자가 품목을 입력하면 구분, 배출방법을 안내해준다. <br />
 Axios를 사용한 비동기 통신에 대해 배울 수 있었다!
 
-✨ [데모 링크](https://savetheearth.netlify.app){:target="_blank"} ✨ <br />
+✨ [데모 링크](https://savetheearth.netlify.app){:target="_blank"}  ✨ <br />
+✨ [데모 링크](https://savetheearth.netlify.app){: target="_blank"} ✨ <br />
 
 ### 사용 기술
 
