@@ -2,14 +2,14 @@
   "name": "trashsearcher",
   "version": "1.0.0",
   "description": "",
-  "main": "./server/index.js",
+  "main": "index.js",
   "engines": {
     "node": "14.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index",
-    "backend": "nodemon index",
+    "start": "node ./server/index",
+    "backend": "nodemon ./server/index",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
