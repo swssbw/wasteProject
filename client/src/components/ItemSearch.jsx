@@ -4,18 +4,23 @@ import ItemSearchResult from './ItemSearchResult';
 import ItemInsert from './ItemInsert';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { text } from '@fortawesome/fontawesome-svg-core';
 
 const ItemSearch = () => {
-  const [Value, setValue] = useState('');
+
+  // 검색어
+  const [Sword, setSword] = useState('');
+
+  // 검색 결과
   const [Result, setResult] = useState(['']);
-  
-  const onChange = useCallback (e => {
-    setValue(e.target.value);
-  },[])
+
+  const onChange = (e) => {
+    setSword(e.target.value);
+  }
 
   const axiosValue = async() => {
     const result = await axios.post('/api/search', {
-      sword: Value
+      sword: Sword
     });
     setResult(result.data);
   }
@@ -31,7 +36,7 @@ const ItemSearch = () => {
       <form onSubmit={onSubmit} className="ItemSearch">
         <input 
           placeholder="검색어를 입력하세요"
-          value={Value.item}
+          value={Sword}
           onChange={onChange}
           required
         />
@@ -39,7 +44,6 @@ const ItemSearch = () => {
         <FontAwesomeIcon icon={faSearch} className="search" />
         </button>
       </form>
-
       {
         Result.length !== 0
         ? <ItemSearchResult Result={Result} />
@@ -47,7 +51,6 @@ const ItemSearch = () => {
       }
     </div>
   )
-
 }
 
 export default ItemSearch

@@ -4,7 +4,7 @@ const router = express.Router();
 
 // 전체 목록 조회 API
 router.get('/all', async(req,res) => {
-  const result = await Sorting.find({})
+  const result = await Sorting.find({});
     res.json(result);
 });
 

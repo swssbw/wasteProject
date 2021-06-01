@@ -1,6 +1,7 @@
-import React,{ useState } from 'react';
+import React,{ useState, useEffect } from 'react';
 import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
+import axios from 'axios';
 
 const MainPage = () => {
 
