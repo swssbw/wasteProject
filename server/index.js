@@ -5,8 +5,10 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 const connect = require('./config/db');
 const indexRouter = require('./routes');
+const adminRouter = require('./routes/admin');
 const cors = require('cors');
 const path = require('path');
+
 
 dotenv.config();
 connect();
@@ -27,6 +29,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use('/api', indexRouter);
+app.use('/api/admin', adminRouter);
 
 app.listen(app.get('port'),()=>{
   console.log(app.get('port'),'번 포트에서 대기중');

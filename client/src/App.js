@@ -2,14 +2,22 @@ import React from 'react'
 import MainPage from './components/MainPage';
 import ItemSearch from './components/ItemSearch';
 import Template from './components/Template';
+import { Route, Link } from 'react-router-dom';
+import Admin from './components/Admin';
 
 function App() {
 
   return(
-    <Template>
-      <MainPage />
-      <ItemSearch />
-    </Template>
+    <>
+    <Route exact path='/'>
+      <div><Link to="/admin">어드민</Link></div>
+       <Template>
+        <MainPage />
+        <ItemSearch />
+      </Template>
+    </Route>
+    <Route path="/admin" component={Admin} />
+    </>  
   )
 }
 

@@ -2,12 +2,6 @@ const express = require('express');
 const Sorting = require('../models/Sorting')
 const router = express.Router();
 
-// 전체 목록 조회 API
-router.get('/all', async(req,res) => {
-  const result = await Sorting.find({});
-    res.json(result);
-});
-
 // 분리수거 항목 검색
 router.post('/search', async(req,res) => {
   // const result = await Sorting.find({"item":req.body.sword});
@@ -27,6 +21,13 @@ router.post('/add', async(req,res) => {
   await sorting.save();
   res.json({success: true});
 })
+
+// 전체 목록 조회 API
+router.get('/all', async(req,res) => {
+  const result = await Sorting.find({});
+    res.json(result);
+});
+
 
 
 module.exports = router;

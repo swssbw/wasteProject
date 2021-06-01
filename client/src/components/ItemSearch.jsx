@@ -1,10 +1,11 @@
 import axios from 'axios';
-import React, { useState , useCallback } from 'react'
+import React, { useState , useCallback, useEffect } from 'react'
 import ItemSearchResult from './ItemSearchResult';
 import ItemInsert from './ItemInsert';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { text } from '@fortawesome/fontawesome-svg-core';
+import SearchHistory from './SearchHistory';
 
 const ItemSearch = () => {
 
@@ -13,6 +14,15 @@ const ItemSearch = () => {
 
   // 검색 결과
   const [Result, setResult] = useState(['']);
+  
+  //  최근 검색어 목록
+  const [keywords, setKeywords] = useState(
+    JSON.parse(localStorage.getItem('keywords') || '[]'),
+  );
+  
+  useEffect(() => {
+    localStorage.setItem('keywords', JSON.stringify(keywords));
+  }, [keywords])
 
   const onChange = (e) => {
     setSword(e.target.value);
@@ -27,7 +37,25 @@ const ItemSearch = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    const newKeyword = {
+      id: Date.now(),
+      Sword: Sword,
+    }
+    setKeywords([newKeyword, ...keywords]);
     axiosValue();
+    console.log(keywords);
+  }
+
+  const onRemoveKeyword = (id) => {
+    const nextKeyword = keywords.filter((value) => {
+      return value.id != id
+    })
+    setKeywords(nextKeyword)
+  } 
+
+    //검색어 전체 삭제
+  const onClearKeywords = () => {
+    setKeywords([])
   }
 
   return (
@@ -44,6 +72,8 @@ const ItemSearch = () => {
         <FontAwesomeIcon icon={faSearch} className="search" />
         </button>
       </form>
+      <SearchHistory keywords={keywords} onRemoveKeyword={onRemoveKeyword} onClearKeywords={onClearKeywords} 
+      ></SearchHistory>
       {
         Result.length !== 0
         ? <ItemSearchResult Result={Result} />
