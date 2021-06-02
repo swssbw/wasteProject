@@ -23,6 +23,13 @@ router.post('/add', async(req,res) => {
   res.json({success: true});
 })
 
+// 전체 목록 조회 API
+// GET api/admin/all
+router.get('/update/:id', async(req,res) => {
+  const result = await Sorting.find({"_id" : req.params.id });
+    res.json(result);
+});
+
 // 아이템 수정
 // PUT api/admin/update/:id 
 router.put('/update/:id', async(req, res) => {
