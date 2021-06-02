@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import cn from 'classnames';
 
-const Insert = ({ cb, children, type }) => {
+const Insert = ({ cb, children, title }) => {
 
   const [Input, setInput] = useState({
     item: '',
@@ -60,6 +59,7 @@ const Insert = ({ cb, children, type }) => {
   return (
     <div>
       {children}
+      { title && <h2 className="formTitle">{title}</h2>}
       <div className="ItemInsert">
         {/* <form onSubmit={onSubmit} className="Insertform"> */}
         <form onSubmit={onSubmit} className="Insertform">
