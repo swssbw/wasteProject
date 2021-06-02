@@ -64,7 +64,6 @@ const ItemSearch = () => {
       <div className="desc">단, 지자체별로 배출방법에 대한 차이가 있을 수 있으니 참고로만 사용해주세요.</div>
       
       <form onSubmit={onSubmit} className="ItemSearch">
-      {/* <form onSubmit={onSubmit} > */}
         <input 
           placeholder="검색어를 입력하세요"
           value={Sword}

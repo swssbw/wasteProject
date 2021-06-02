@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Insert from './Insert';
 import 'rodal/lib/rodal.css';
-import {DoubleLeftOutlined , HomeOutlined, CloseCircleOutlined} from '@ant-design/icons';
+import { HomeOutlined, CloseCircleOutlined} from '@ant-design/icons';
 import EditItem from './EditItem';
 
 const Admin = () => {
@@ -16,7 +16,7 @@ const Admin = () => {
   const reverse = [...Contents].reverse();
   
   const handleAll = async() => {
-    axios.get('/api/admin/all').then(result => {setContents(result.data)});
+    await axios.get('/api/admin/all').then(result => {setContents(result.data)});
   }
 
   useEffect(() => {

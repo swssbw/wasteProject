@@ -11,8 +11,8 @@ const EditItem = ({ cb, id, setType, title }) => {
 
   const {item, how, category} = Detail;
 
-  // //useEffect hook에서 async/await을 쓰려면 훅 안에서 함수를 만들고 호출하든가,
-  // // hook밖에서 만들고 hook안에서 호출하던가!
+  // useEffect hook에서 async/await을 쓰려면 훅 안에서 함수를 만들고 호출하든가,
+  // hook밖에서 만들고 hook안에서 호출하던가!
   useEffect(() => {
     async function axiosDetail() {
       const result = await axios.get(`/api/admin/update/${id}`);
