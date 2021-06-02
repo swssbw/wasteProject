@@ -5,6 +5,14 @@ a {
   font-weight: 600;
 }
 
+.home {
+  display: inline-block;
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: 6px;
+  margin: 0 350px 0 5px;
+}
+
 .admincontainer {
   width: 1000px;
   margin: 5vh auto;
@@ -18,7 +26,6 @@ a {
     background-color: #cfcfcf;
     color: $darkblack;
     font-size: 3rem;
-    text-align: center;
     padding: 5px;
   }
 }

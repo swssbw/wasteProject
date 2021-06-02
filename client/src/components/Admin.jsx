@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Insert from './Insert';
-import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
-import EditItem from "./EditItem";
-import Template from './Template';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import {DoubleLeftOutlined , HomeOutlined, CloseCircleOutlined} from '@ant-design/icons';
+import EditItem from './EditItem';
 
 const Admin = () => {
   // Contents : 전체 목록
   const [Contents, setContents] = useState([]);
+
+  const [itemId, setItemId] = useState('');
 
   //최근에 추가된 아이템부터 보여질 수 있도록 배열 순서를 거꾸로 출력함
   const reverse = [...Contents].reverse();
@@ -26,31 +26,49 @@ const Admin = () => {
 
   // 아이템 삭제 후 목록을 다시 불러옴
   const remove = async(id) => {
-    if(window.confirm("정말 삭제할거야?") == true) {
+    if(window.confirm("정말 삭제하시겠습니까?") == true) {
       await axios.delete(`/api/admin/delete/${id}`)
       handleAll();
     }
   }
 
+  // 인풋박스의 타입이 수정인지 추가인지 알려줌
+  const [type, setType] = useState(true);
+
+  const handleItemClick = (id) => {
+    setType(false);
+    setItemId(id);
+    console.log(type, id);
+  }
+  
   const contentsList = (
     reverse.map(item => 
       <tr key={item._id}>
-        <td><Link to={"/update/"+item._id}>{item.item}</Link></td>
+        {/* <td><Link to={"/update/"+item._id}>{item.item}</Link></td> */}
+        <td onClick={() => handleItemClick(item._id)}>{item.item}</td>
         <td style={{ textAlign:"center" }}>{item.category}</td>
         <td>{item.how}</td>
-        <td style={{ textAlign:"center" }}><button onClick={() => remove(item._id)}>X</button></td>
+        <td style={{ textAlign:"center" }}><CloseCircleOutlined onClick={() => remove(item._id)} /></td>
       </tr>
     ))
 
   return (
     <>
-    <p><Link to="/" >홈으로</Link></p>
+  
     <div className="admincontainer">
-      <h1 className="adminTitle">관리자 페이지</h1>
+      <div className="adminTitle"> 
+        <p className="home"><Link to="/" ><HomeOutlined /></Link></p>
+        관리자 페이지
+      </div>
 
         <div className="gridContainer">
           <div className="col1">
-            <Insert cb={handleAll}></Insert>
+            {
+              type === true
+              ? <Insert cb={handleAll} title={"추가하기"}></Insert>
+              : <EditItem cb={handleAll} id={itemId} setType={setType} title={"수정하기"}></EditItem>
+            }
+            {/* <Insert cb={handleAll}></Insert> */}
           </div>
 
           <div className="col2">
