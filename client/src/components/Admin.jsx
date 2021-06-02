@@ -19,12 +19,12 @@ const Admin = () => {
     await axios.get('/api/admin/all').then(result => {setAllItems(result.data)});
   }
 
-  // useEffect(() => {
-  //   handleAll();
-  // }, []);
+  useEffect(() => {
+    handleAll();
+  }, []);
   
 
-  console.log(allItems);
+  console.log('전체아이템:',allItems);
   
 
   // 아이템 삭제 후 목록을 다시 불러옴
