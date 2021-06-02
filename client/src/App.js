@@ -4,6 +4,8 @@ import ItemSearch from './components/ItemSearch';
 import Template from './components/Template';
 import { Route, Link } from 'react-router-dom';
 import Admin from './components/Admin';
+import EditItem from './components/EditItem';
+
 
 function App() {
 
@@ -17,6 +19,7 @@ function App() {
       </Template>
     </Route>
     <Route path="/admin" component={Admin} />
+    <Route path="/update/:id" component={EditItem}/>
     </>  
   )
 }

@@ -4,7 +4,6 @@ import ItemSearchResult from './ItemSearchResult';
 import ItemInsert from './ItemInsert';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { text } from '@fortawesome/fontawesome-svg-core';
 import SearchHistory from './SearchHistory';
 
 const ItemSearch = () => {
