@@ -21,12 +21,14 @@ const Admin = () => {
 
   useEffect(() => {
     handleAll();
-  }, [])
+  }, []);
+  
+  console.log(Contents);
   
 
   // 아이템 삭제 후 목록을 다시 불러옴
   const remove = async(id) => {
-    if(window.confirm("정말 삭제하시겠습니까?") == true) {
+    if(window.confirm("정말 삭제하시겠습니까?") === true) {
       await axios.delete(`/api/admin/delete/${id}`)
       handleAll();
     }

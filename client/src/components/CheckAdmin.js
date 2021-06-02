@@ -8,7 +8,7 @@ const CheckAdmin = ({ history }) => {
   };
 
   const promptvalue = prompt('암호를 입력하세요');
-  if(promptvalue == process.env.REACT_APP_ADMINPASSWORD ) {
+  if(promptvalue === process.env.REACT_APP_ADMINPASSWORD ) {
     return <Admin />
   } else {
     alert('관리자만 접근 가능합니다.');

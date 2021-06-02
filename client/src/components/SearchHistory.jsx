@@ -7,7 +7,7 @@ const SearchHistory = ({ keywords, onRemoveKeyword, onClearKeywords }) => {
   }
 
   return (
-    <div class="shcontainer">
+    <div className="shcontainer">
       <div className="shwrapper">
         <ul>
           {keywords.map(({id, Sword}) => {

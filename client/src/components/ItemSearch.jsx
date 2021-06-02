@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState , useCallback, useEffect } from 'react'
+import React, { useState , useEffect } from 'react'
 import ItemSearchResult from './ItemSearchResult';
 import ItemInsert from './ItemInsert';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -49,7 +49,7 @@ const ItemSearch = () => {
   // 최근 검색어 개별 삭제
   const onRemoveKeyword = (id) => {
     const nextKeyword = keywords.filter((value) => {
-      return value.id != id
+      return value.id !== id
     })
     setKeywords(nextKeyword)
   } 
