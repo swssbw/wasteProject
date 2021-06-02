@@ -13,10 +13,6 @@ function App() {
     <>
     <Route exact path='/'>
       <div><Link to="/admin">어드민</Link></div>
-       <Template>
-        <MainPage />
-        <ItemSearch />
-      </Template>
     </Route>
     <Route path="/admin" component={Admin} />
     <Route path="/update/:id" component={EditItem}/>
