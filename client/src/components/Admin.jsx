@@ -7,16 +7,16 @@ import { HomeOutlined, CloseCircleOutlined} from '@ant-design/icons';
 import EditItem from './EditItem';
 
 const Admin = () => {
-  // Contents : 전체 목록
-  const [Contents, setContents] = useState([]);
+  // allItems : 전체 목록
+  const [ allItems, setAllItems] = useState([]);
 
   const [itemId, setItemId] = useState('');
 
   //최근에 추가된 아이템부터 보여질 수 있도록 배열 순서를 거꾸로 출력함
-  const reverse = [...Contents].reverse();
+  const reverse = [...allItems].reverse();
   
   const handleAll = async() => {
-    await axios.get('/api/admin/all').then(result => {setContents(result.data)});
+    await axios.get('/api/admin/all').then(result => {setAllItems(result.data)});
   }
 
   // useEffect(() => {
@@ -24,7 +24,7 @@ const Admin = () => {
   // }, []);
   
 
-  console.log(Contents);
+  console.log(allItems);
   
 
   // 아이템 삭제 후 목록을 다시 불러옴
