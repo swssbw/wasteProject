@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Link } from 'react-router-dom';
 import EditItem from './components/EditItem';
 import LandingPage from './components/LandingPage';
-import CheckAdmin from './components/CheckAdmin';
+import CheckAdmin from './components/CheckAdmin.js';
 import { UserOutlined } from '@ant-design/icons';
 
 function App() {
