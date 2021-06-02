@@ -6,15 +6,16 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchHistory from './SearchHistory';
 
+
 const ItemSearch = () => {
 
-  // 검색어
+  // 검색어 SearchWord
   const [Sword, setSword] = useState('');
 
   // 검색 결과
   const [Result, setResult] = useState(['']);
   
-  //  최근 검색어 목록
+  // 최근 검색어 목록
   const [keywords, setKeywords] = useState(
     JSON.parse(localStorage.getItem('keywords') || '[]'),
   );
@@ -44,7 +45,8 @@ const ItemSearch = () => {
     axiosValue();
     console.log(keywords);
   }
-
+  
+  // 최근 검색어 개별 삭제
   const onRemoveKeyword = (id) => {
     const nextKeyword = keywords.filter((value) => {
       return value.id != id
@@ -52,7 +54,7 @@ const ItemSearch = () => {
     setKeywords(nextKeyword)
   } 
 
-    //검색어 전체 삭제
+    // 최근 검색어 전체 삭제
   const onClearKeywords = () => {
     setKeywords([])
   }
@@ -60,7 +62,9 @@ const ItemSearch = () => {
   return (
     <div>
       <div className="desc">단, 지자체별로 배출방법에 대한 차이가 있을 수 있으니 참고로만 사용해주세요.</div>
+      
       <form onSubmit={onSubmit} className="ItemSearch">
+      {/* <form onSubmit={onSubmit} > */}
         <input 
           placeholder="검색어를 입력하세요"
           value={Sword}
@@ -71,13 +75,19 @@ const ItemSearch = () => {
         <FontAwesomeIcon icon={faSearch} className="search" />
         </button>
       </form>
-      <SearchHistory keywords={keywords} onRemoveKeyword={onRemoveKeyword} onClearKeywords={onClearKeywords} 
+
+      <SearchHistory 
+        keywords={keywords} 
+        onRemoveKeyword={onRemoveKeyword} 
+        onClearKeywords={onClearKeywords} 
       ></SearchHistory>
+
       {
         Result.length !== 0
         ? <ItemSearchResult Result={Result} />
         : <ItemInsert />
       }
+      
     </div>
   )
 }

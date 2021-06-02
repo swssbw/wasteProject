@@ -1,0 +1,33 @@
+.shdesc {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.shcontainer {
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: center;
+}
+
+.remove {
+  color: rgb(255, 106, 106);
+}
+
+.shwrapper {
+  display: flex;
+  width: 400px;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .boxtitle {
+    display: inline;
+  }
+
+  ul {
+    display: flex;
+
+    li {
+      margin: 0 5px;
+    }
+  }
+}
