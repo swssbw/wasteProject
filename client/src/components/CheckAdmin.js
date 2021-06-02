@@ -2,7 +2,7 @@ import React from 'react'
 import Admin from './Admin';
 
 const CheckAdmin = ({ history }) => {
-
+  console.log(process.env.REACT_APP_ADMINPASSWORD);
   const goHome = () => {
     history.push('/');
   };
