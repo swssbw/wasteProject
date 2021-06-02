@@ -44,7 +44,6 @@ const Admin = () => {
   const contentsList = (
     reverse.map(item => 
       <tr key={item._id}>
-        {/* <td><Link to={"/update/"+item._id}>{item.item}</Link></td> */}
         <td onClick={() => handleItemClick(item._id)}>{item.item}</td>
         <td style={{ textAlign:"center" }}>{item.category}</td>
         <td>{item.how}</td>
@@ -60,7 +59,6 @@ const Admin = () => {
         <p className="home"><Link to="/" ><HomeOutlined /></Link></p>
         관리자 페이지
       </div>
-
         <div className="gridContainer">
           <div className="col1">
             {
@@ -68,7 +66,6 @@ const Admin = () => {
               ? <Insert cb={handleAll} title={"추가하기"}></Insert>
               : <EditItem cb={handleAll} id={itemId} setType={setType} title={"수정하기"}></EditItem>
             }
-            {/* <Insert cb={handleAll}></Insert> */}
           </div>
 
           <div className="col2">
