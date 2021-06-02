@@ -19,10 +19,11 @@ const Admin = () => {
     await axios.get('/api/admin/all').then(result => {setContents(result.data)});
   }
 
-  useEffect(() => {
-    handleAll();
-  }, []);
+  // useEffect(() => {
+  //   handleAll();
+  // }, []);
   
+
   console.log(Contents);
   
 
@@ -55,11 +56,10 @@ const Admin = () => {
 
   return (
     <>
-  
     <div className="admincontainer">
       <div className="adminTitle"> 
         <p className="home"><Link to="/" ><HomeOutlined /></Link></p>
-        관리자 페이지
+        <span onClick={handleAll}>관리자 페이지</span>
       </div>
         <div className="gridContainer">
           <div className="col1">
