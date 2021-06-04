@@ -5,7 +5,6 @@ const SortingSchema = mongoose.Schema({
   category: {type:String, select:true, required:true},
   how: {type:String, required:true},
   caution: {type:String},
-  regDt:{type:Date, default: Date.now}
   });
 
 module.exports = mongoose.model(' Sortings ', SortingSchema);

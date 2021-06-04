@@ -6,15 +6,14 @@ import CheckAdmin from './components/CheckAdmin.js';
 import { UserOutlined } from '@ant-design/icons';
 
 function App() {
-
   return(
     <>
-    <Route exact path='/'>
-      <Link to="/admin"><UserOutlined className="enterAdmin"/></Link>
-      <LandingPage></LandingPage>
-    </Route>
-    <Route path="/admin" component={CheckAdmin} />
-    <Route path="/update/:id" component={EditItem}/>
+      <Route exact path='/'>
+        <Link to="/admin"><UserOutlined className="enterAdmin"/></Link>
+        <LandingPage></LandingPage>
+      </Route>
+      <Route path="/admin" component={CheckAdmin} />
+      <Route path="/update/:id" component={EditItem}/>
     </>  
   )
 }

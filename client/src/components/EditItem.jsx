@@ -11,8 +11,6 @@ const EditItem = ({ cb, id, setType, title }) => {
 
   const {item, how, category} = Detail;
 
-  // useEffect hook에서 async/await을 쓰려면 훅 안에서 함수를 만들고 호출하든가,
-  // hook밖에서 만들고 hook안에서 호출하던가!
   useEffect(() => {
     async function axiosDetail() {
       const result = await axios.get(`/api/admin/update/${id}`);
@@ -23,7 +21,7 @@ const EditItem = ({ cb, id, setType, title }) => {
       })
     }
     axiosDetail();
-  }, [id])
+  }, [id]);
 
   const onChange = (e) => {
     const {name, value} = e.target;
@@ -31,40 +29,40 @@ const EditItem = ({ cb, id, setType, title }) => {
       ...Detail,
       [name]: value
     });
-  }
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
     axiosInput();
     cb();
     setType(true);
-  }
+  };
 
   const axiosInput = async() => {
     await axios.put(`/api/admin/update/${id}`,Detail);
-  }
+  };
 
   const options = (
     <>
-    <option value="">카테고리를 선택해주세요!</option>  
-    <option value="가전제품">가전제품</option>  
-    <option value="고철">고철</option>
-    <option value="금속캔">금속캔</option>
-    <option value="대형">대형</option>
-    <option value="전문시설">전문시설</option>
-    <option value="불연성 폐기물">불연성 폐기물</option>
-    <option value="비닐">비닐</option>
-    <option value="유리병">유리병</option>
-    <option value="음식물">음식물</option>
-    <option value="의류">의류</option>
-    <option value="재질에 맞게 배출">재질에 맞게 배출</option>
-    <option value="전용함">전용함</option>
-    <option value="종량제">종량제</option>
-    <option value="종이">종이</option>
-    <option value="종이팩">종이팩</option>
-    <option value="플라스틱">플라스틱</option>
+      <option value="">카테고리를 선택해주세요!</option>  
+      <option value="가전제품">가전제품</option>  
+      <option value="고철">고철</option>
+      <option value="금속캔">금속캔</option>
+      <option value="대형">대형</option>
+      <option value="전문시설">전문시설</option>
+      <option value="불연성 폐기물">불연성 폐기물</option>
+      <option value="비닐">비닐</option>
+      <option value="유리병">유리병</option>
+      <option value="음식물">음식물</option>
+      <option value="의류">의류</option>
+      <option value="재질에 맞게 배출">재질에 맞게 배출</option>
+      <option value="전용함">전용함</option>
+      <option value="종량제">종량제</option>
+      <option value="종이">종이</option>
+      <option value="종이팩">종이팩</option>
+      <option value="플라스틱">플라스틱</option>
     </>
-  )
+  );
 
   return (
     <>
@@ -100,7 +98,7 @@ const EditItem = ({ cb, id, setType, title }) => {
           </form>
       </div>
     </>
-  )
+  );
 }
 
 export default EditItem

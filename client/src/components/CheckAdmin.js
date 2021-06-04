@@ -2,7 +2,7 @@ import React from 'react'
 import Admin from './Admin';
 
 const CheckAdmin = ({ history }) => {
-  console.log(process.env.REACT_APP_ADMINPASSWORD);
+  
   const goHome = () => {
     history.push('/');
   };
@@ -14,7 +14,7 @@ const CheckAdmin = ({ history }) => {
     alert('관리자만 접근 가능합니다.');
     goHome();
     return null;
-  }
+  };
 
 }
 

@@ -6,10 +6,10 @@ import PleaseRead from './PleaseRead';
 const LandingPage = () => {
   return (
     <>
-    <Template>
-      <PleaseRead />
-      <ItemSearch />
-    </Template>
+      <Template>
+        <PleaseRead />
+        <ItemSearch />
+      </Template>
     </>
   )
 }

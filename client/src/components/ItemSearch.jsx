@@ -22,18 +22,18 @@ const ItemSearch = () => {
   
   useEffect(() => {
     localStorage.setItem('keywords', JSON.stringify(keywords));
-  }, [keywords])
+  }, [keywords]);
 
   const onChange = (e) => {
     setSword(e.target.value);
-  }
+  };
 
   const axiosValue = async() => {
     const result = await axios.post('/api/search', {
       sword: Sword
     });
     setResult(result.data);
-  }
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -44,7 +44,7 @@ const ItemSearch = () => {
     setKeywords([newKeyword, ...keywords]);
     axiosValue();
     console.log(keywords);
-  }
+  };
   
   // 최근 검색어 개별 삭제
   const onRemoveKeyword = (id) => {
@@ -52,12 +52,12 @@ const ItemSearch = () => {
       return value.id !== id
     })
     setKeywords(nextKeyword)
-  } 
+  } ;
 
     // 최근 검색어 전체 삭제
   const onClearKeywords = () => {
     setKeywords([])
-  }
+  };
 
   return (
     <div>
@@ -88,7 +88,7 @@ const ItemSearch = () => {
       }
       
     </div>
-  )
+  );
 }
 
 export default ItemSearch

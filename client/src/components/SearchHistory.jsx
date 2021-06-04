@@ -4,7 +4,7 @@ const SearchHistory = ({ keywords, onRemoveKeyword, onClearKeywords }) => {
   
   if(keywords.length === 0) {
     return <div className="shdesc"> 최근 검색한 기록이 없습니다. </div>
-  }
+  };
 
   return (
     <div className="shcontainer">
@@ -19,9 +19,7 @@ const SearchHistory = ({ keywords, onRemoveKeyword, onClearKeywords }) => {
           })}
         </ul>
       </div>
-
       <span className="remove" onClick={onClearKeywords}>&nbsp;X</span>
-
     </div>
   )
 }

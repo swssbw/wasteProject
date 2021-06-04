@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { HomeOutlined, CloseCircleOutlined} from '@ant-design/icons';
 import axios from 'axios';
 import Insert from './Insert';
-import 'rodal/lib/rodal.css';
-import { HomeOutlined, CloseCircleOutlined} from '@ant-design/icons';
 import EditItem from './EditItem';
+import 'rodal/lib/rodal.css';
 
 const Admin = () => {
   // allItems : 전체 목록
@@ -12,28 +12,25 @@ const Admin = () => {
 
   const [itemId, setItemId] = useState('');
 
-  //최근에 추가된 아이템부터 보여질 수 있도록 배열 순서를 거꾸로 출력함
+  // 최근에 추가된 아이템부터 보여질 수 있도록 배열 순서를 거꾸로 출력함
   const reverse = [...allItems].reverse();
   
   const handleAll = async() => {
     await axios.get('/api/admin/all').then(result => {setAllItems(result.data)});
-  }
+  };
 
   useEffect(() => {
     handleAll();
   }, []);
   
-
-  console.log('전체아이템:',allItems);
   
-
   // 아이템 삭제 후 목록을 다시 불러옴
   const remove = async(id) => {
     if(window.confirm("정말 삭제하시겠습니까?") === true) {
       await axios.delete(`/api/admin/delete/${id}`)
       handleAll();
     }
-  }
+  };
 
   // 인풋박스의 타입이 수정인지 추가인지 알려줌
   const [type, setType] = useState(true);
@@ -42,7 +39,7 @@ const Admin = () => {
     setType(false);
     setItemId(id);
     console.log(type, id);
-  }
+  };
   
   const contentsList = (
     reverse.map(item => 
@@ -52,7 +49,7 @@ const Admin = () => {
         <td>{item.how}</td>
         <td style={{ textAlign:"center" }}><CloseCircleOutlined onClick={() => remove(item._id)} /></td>
       </tr>
-    ))
+    ));
 
   return (
     <>
@@ -69,7 +66,6 @@ const Admin = () => {
               : <EditItem cb={handleAll} id={itemId} setType={setType} title={"수정하기"}></EditItem>
             }
           </div>
-
           <div className="col2">
             <div className="loadAll">
               <table>
@@ -87,11 +83,10 @@ const Admin = () => {
               </table>
             </div>
           </div>
-
         </div>
     </div>
     </>
-  )
+  );
 }
 
 export default Admin

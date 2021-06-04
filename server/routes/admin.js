@@ -38,7 +38,6 @@ router.put('/update/:id', async(req, res) => {
   let id = req.params.id;
   console.log("!!!!!!!!!!!!req.body.item는", req.body.item);
   const result = await Sorting.findByIdAndUpdate({"_id" : id }, { 
-    
     item: req.body.item,
     how: req.body.how,
     category: req.body.category,

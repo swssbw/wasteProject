@@ -8,11 +8,11 @@ const ItemInsert = () => {
 
   const show = () => {
     setVisible(true);
-  }
+  };
 
   const hide = () => {
     setVisible(false);
-  }
+  };
 
   return (
     <div className="ItemInsert">
@@ -24,7 +24,7 @@ const ItemInsert = () => {
         </div>
       </Rodal>
     </div>
-    )
+    );
 }
 
 export default ItemInsert
