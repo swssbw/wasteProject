@@ -9,7 +9,7 @@ const EditItem = ({ cb, id, setType, title }) => {
     category: ""
   });
 
-  const {item, how, category} = Detail;
+  const { item, how, category } = Detail;
 
   useEffect(() => {
     async function axiosDetail() {
@@ -24,7 +24,7 @@ const EditItem = ({ cb, id, setType, title }) => {
   }, [id]);
 
   const onChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setDetail({
       ...Detail,
       [name]: value
@@ -38,14 +38,14 @@ const EditItem = ({ cb, id, setType, title }) => {
     setType(true);
   };
 
-  const axiosInput = async() => {
-    await axios.put(`/api/admin/update/${id}`,Detail);
+  const axiosInput = async () => {
+    await axios.put(`/api/admin/update/${id}`, Detail);
   };
 
   const options = (
     <>
-      <option value="">카테고리를 선택해주세요!</option>  
-      <option value="가전제품">가전제품</option>  
+      <option value="">카테고리를 선택해주세요!</option>
+      <option value="가전제품">가전제품</option>
       <option value="고철">고철</option>
       <option value="금속캔">금속캔</option>
       <option value="대형">대형</option>
@@ -69,37 +69,36 @@ const EditItem = ({ cb, id, setType, title }) => {
       <h2 className="formTitle">{title}</h2>
       <div className="ItemInsert">
         <form onSubmit={onSubmit} className="Insertform" >
-            <input
-              placeholder="무엇을 버릴까요?"
-              name="item"
-              value={item}
-              onChange={onChange}
-              required
-              autoComplete="off"
-            /><br/>
-            <input
-              placeholder="어떻게 버릴까요?"
-              name="how"
-              value={how}
-              onChange={onChange}
-              required
-              autoComplete="off"
-            /><br/>
-            <select
-              name="category"
-              value={category}
-              onChange={onChange}
-              required
-              className="categorySelect"
-            >
-              {options}
-            </select><br/>
-            <button type="submit">수정</button>
-          </form>
+          <input
+            placeholder="무엇을 버릴까요?"
+            name="item"
+            value={item}
+            onChange={onChange}
+            required
+            autoComplete="off"
+          /><br />
+          <input
+            placeholder="어떻게 버릴까요?"
+            name="how"
+            value={how}
+            onChange={onChange}
+            required
+            autoComplete="off"
+          /><br />
+          <select
+            name="category"
+            value={category}
+            onChange={onChange}
+            required
+            className="categorySelect"
+          >
+            {options}
+          </select><br />
+          <button type="submit">수정</button>
+        </form>
       </div>
     </>
   );
 }
 
 export default EditItem
-                               

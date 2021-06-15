@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState , useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ItemSearchResult from './ItemSearchResult';
 import ItemInsert from './ItemInsert';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -14,12 +14,12 @@ const ItemSearch = () => {
 
   // 검색 결과
   const [Result, setResult] = useState(['']);
-  
+
   // 최근 검색어 목록
   const [keywords, setKeywords] = useState(
     JSON.parse(localStorage.getItem('keywords') || '[]'),
   );
-  
+
   useEffect(() => {
     localStorage.setItem('keywords', JSON.stringify(keywords));
   }, [keywords]);
@@ -28,7 +28,7 @@ const ItemSearch = () => {
     setSword(e.target.value);
   };
 
-  const axiosValue = async() => {
+  const axiosValue = async () => {
     const result = await axios.post('/api/search', {
       sword: Sword
     });
@@ -43,18 +43,17 @@ const ItemSearch = () => {
     }
     setKeywords([newKeyword, ...keywords]);
     axiosValue();
-    console.log(keywords);
   };
-  
+
   // 최근 검색어 개별 삭제
   const onRemoveKeyword = (id) => {
     const nextKeyword = keywords.filter((value) => {
       return value.id !== id
     })
     setKeywords(nextKeyword)
-  } ;
+  };
 
-    // 최근 검색어 전체 삭제
+  // 최근 검색어 전체 삭제
   const onClearKeywords = () => {
     setKeywords([])
   };
@@ -62,31 +61,31 @@ const ItemSearch = () => {
   return (
     <div>
       <div className="desc">단, 지자체별로 배출방법에 대한 차이가 있을 수 있으니 참고로만 사용해주세요.</div>
-      
+
       <form onSubmit={onSubmit} className="ItemSearch">
-        <input 
+        <input
           placeholder="검색어를 입력하세요"
           value={Sword}
           onChange={onChange}
           required
         />
         <button type="submit">
-        <FontAwesomeIcon icon={faSearch} className="search" />
+          <FontAwesomeIcon icon={faSearch} className="search" />
         </button>
       </form>
 
-      <SearchHistory 
-        keywords={keywords} 
-        onRemoveKeyword={onRemoveKeyword} 
-        onClearKeywords={onClearKeywords} 
+      <SearchHistory
+        keywords={keywords}
+        onRemoveKeyword={onRemoveKeyword}
+        onClearKeywords={onClearKeywords}
       ></SearchHistory>
 
       {
         Result.length !== 0
-        ? <ItemSearchResult Result={Result} />
-        : <ItemInsert />
+          ? <ItemSearchResult Result={Result} />
+          : <ItemInsert />
       }
-      
+
     </div>
   );
 }

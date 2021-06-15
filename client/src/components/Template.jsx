@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Template = ({children}) => {
+const Template = ({ children }) => {
   return (
     <div className="wrapper">
       <div className="template">

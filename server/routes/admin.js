@@ -34,9 +34,7 @@ router.get('/update/:id', async(req,res) => {
 // 아이템 수정
 // PUT api/admin/update/:id 
 router.put('/update/:id', async(req, res) => {
-  // const {item, how, category} = req.body.Input
   let id = req.params.id;
-  console.log("!!!!!!!!!!!!req.body.item는", req.body.item);
   const result = await Sorting.findByIdAndUpdate({"_id" : id }, { 
     item: req.body.item,
     how: req.body.how,

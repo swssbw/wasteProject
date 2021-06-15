@@ -9,10 +9,10 @@ const Insert = ({ cb, children, title }) => {
     category: '',
   });
 
-  const { item, how, category  } = Input;
+  const { item, how, category } = Input;
 
   const onChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setInput({
       ...Input,
       [name]: value
@@ -30,14 +30,14 @@ const Insert = ({ cb, children, title }) => {
     cb();
   };
 
-  const axiosInput = async() => {
-    await axios.post("/api/add",{Input})
+  const axiosInput = async () => {
+    await axios.post("/api/add", { Input })
   };
 
   const options = (
     <>
-      <option value="">카테고리를 선택해주세요!</option>  
-      <option value="가전제품">가전제품</option>  
+      <option value="">카테고리를 선택해주세요!</option>
+      <option value="가전제품">가전제품</option>
       <option value="고철">고철</option>
       <option value="금속캔">금속캔</option>
       <option value="대형">대형</option>
@@ -70,7 +70,7 @@ const Insert = ({ cb, children, title }) => {
             onChange={onChange}
             required
             autoComplete="off"
-          /><br/>
+          /><br />
           <input
             placeholder="어떻게 버릴까요?"
             name="how"
@@ -78,7 +78,7 @@ const Insert = ({ cb, children, title }) => {
             onChange={onChange}
             required
             autoComplete="off"
-          /><br/>
+          /><br />
           <select
             name="category"
             value={category}
@@ -87,7 +87,7 @@ const Insert = ({ cb, children, title }) => {
             className="categorySelect"
           >
             {options}
-          </select><br/>
+          </select><br />
           <button type="submit">추가</button>
         </form>
       </div>

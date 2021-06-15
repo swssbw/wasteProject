@@ -20,11 +20,11 @@ const ItemInsert = () => {
       <Rodal visible={Visible} onClose={hide} width={300} height={300}>
         <div className="modalWrapper">
           <p>감사합니다😊</p>
-          <div className="InsertModalDesc">입력해주신 내용은 <br/> 검토 후 반영하도록 하겠습니다.</div>
+          <div className="InsertModalDesc">입력해주신 내용은 <br /> 검토 후 반영하도록 하겠습니다.</div>
         </div>
       </Rodal>
     </div>
-    );
+  );
 }
 
 export default ItemInsert
